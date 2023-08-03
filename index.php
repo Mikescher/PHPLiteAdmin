@@ -2385,7 +2385,7 @@ if(isset($_GET['action']) && !isset($_GET['confirm']))
 							$orderTag = "ASC";
 						echo $params->getLink(array('action'=>$_GET['action'], 'sort'=>$tableInfo[$i]['name'], 'order'=>$orderTag ), htmlencode($tableInfo[$i]['name']));
 						if(isset($_SESSION[COOKIENAME.'sortRows']) && $_SESSION[COOKIENAME.'sortRows']==$tableInfo[$i]['name'])
-							echo (($_SESSION[COOKIENAME.'orderRows']=="ASC") ? " <b>&uarr;</b>" : " <b>&darr;</b>");
+							echo (($_SESSION[COOKIENAME.'orderRows']=="ASC") ? "&nbsp;<b>&uarr;</b>" : "&nbsp;<b>&darr;</b>");
 						echo "</td>";
 					}
 					echo "</tr>";
@@ -3465,7 +3465,7 @@ if(!$target_table && !isset($_GET['confirm']) && (!isset($_GET['action']) || (is
 				$orderTag = "ASC";
 			echo $params->getLink(array('sort'=>'name', 'order'=>$orderTag), $lang['name']);
 			if(isset($_SESSION[COOKIENAME.'sortTables']) && $_SESSION[COOKIENAME.'sortTables']=="name")
-				echo (($_SESSION[COOKIENAME.'orderTables']=="ASC") ? " <b>&uarr;</b>" : " <b>&darr;</b>");
+				echo (($_SESSION[COOKIENAME.'orderTables']=="ASC") ? "&nbsp;<b>&uarr;</b>" : "&nbsp;<b>&darr;</b>");
 			echo "</td>";
 
 			echo "<td class='tdheader'>";
@@ -3476,7 +3476,7 @@ if(!$target_table && !isset($_GET['confirm']) && (!isset($_GET['action']) || (is
 			echo $params->getLink(array('sort'=>'type', 'order'=>$orderTag), $lang['type']);
 			echo helpLink($lang['help3']);
 			if(isset($_SESSION[COOKIENAME.'sortTables']) && $_SESSION[COOKIENAME.'sortTables']=="type")
-				echo (($_SESSION[COOKIENAME.'orderTables']=="ASC") ? " <b>&uarr;</b>" : " <b>&darr;</b>");
+				echo (($_SESSION[COOKIENAME.'orderTables']=="ASC") ? "&nbsp;<b>&uarr;</b>" : "&nbsp;<b>&darr;</b>");
 			echo "</td>";
 
 			echo "<td class='tdheader' colspan='10'>".$lang['act']."</td>";

@@ -188,7 +188,7 @@ class Database
 				$name = $database['name'];
 				if(mb_strlen($name)>25)
 					$name = "...".mb_substr($name, mb_strlen($name)-22, 22); 
-				echo '[' . ($database['readable'] ? 'r':' ' ) . ($database['writable'] && $database['writable_dir'] ? 'w':' ' ) . ']&nbsp;';
+				echo '[' . ($database['readable'] ? 'r':'&nbsp;' ) . ($database['writable'] && $database['writable_dir'] ? 'w':'&nbsp;' ) . ']&nbsp;';
 				
 				echo $params->getLink(array('database'=>$database['path'], 'table'=>null), htmlencode($name), ($database == $currentDB? 'active_db': '') );
 				echo "&nbsp;&nbsp;";
