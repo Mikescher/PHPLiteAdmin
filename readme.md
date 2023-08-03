@@ -121,7 +121,24 @@ See https://bitbucket.org/phpliteadmin/public/wiki/Configuration for details.
 	
 7.   Open a web browser and navigate to the uploaded `phpliteadmin.php` file. You
      will be prompted to enter a password. Use the same password you set in step 4.
-     
+
+## Docker
+
+Run via `docker run -p 8080:80 -v "$(pwd):/db" "registry.blackforestbytes.com/mikescher/sqlite-web:latest"`
+
+You need to map the directory with your database files to `/db`.
+
+You can configure various settings with environment variables (see also phpliteadmin.config.sample.php):
+
+ - `PASSWORD` set the password, if not set a random password will be generated and printed on stdout
+ - `COOKIE` change the cookie key
+ - `HEXBLOBS` set to `true` to disable blobs as hex
+ - `LANGUAGE` change the language
+ - `ROWS_NUM` change the default row count
+ - `CHARS_NUM` limit strings to n characters 
+ - `MAX_SAVED_QUERIES` maximum number of SQL queries to save in the history 
+ - `DEBUG` set to `true` to enable debug mode
+
 ## Code Repository and pull requests
 
 The code repository is available both on bitbucket and github:
